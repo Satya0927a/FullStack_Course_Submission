@@ -122,13 +122,13 @@ const Personform = ({persons,setPersons, setnotification})=>{
       const newobj = {
           name: newName.trim(),
           number: newnumber,
-          id: `${persons.length + 1}`
         }
 
         numberslog
           .addData(newobj)
           .then(response =>{
-            setPersons(persons.concat(newobj))
+            
+            setPersons(persons.concat(response))
             setnotification({message:`Added ${newName} successfully`, color:"green"})
 
             setNewName("")
